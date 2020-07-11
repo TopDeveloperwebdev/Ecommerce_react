@@ -1,127 +1,81 @@
-# Multi Step Form
-It's a simple step-by-step form using React/Redux. Created to solve this [challenge](https://gist.github.com/rewop/d3aa46cb3874c2a47e51c0a33f1f60f6#file-api-js).
+Live example is [here](https://codesandbox.io/s/github/yunusemredilber/material-ui-starter).
+Thanks to [Material-UI](https://github.com/mui-org/material-ui) for great, fully responsive and handsome UI.
+This template comes with ready to use [Redux](https://github.com/reduxjs/redux), [React Router](https://github.com/ReactTraining/react-router), [local-storage](https://github.com/bevacqua/local-storage) and more!
 
-## The project
-
-### The structure
-
+To run on localhost:
+```
+cd material-ui-starter
+npm install
+npm start
  ```
-|- src/
-    |- components
-    |- containers
-    |- store
-    |- saga
-    |- css
-```
 
-### Presentational components
-First of all I created the `components` module containing all presentational components. Only these components can be styled. These components are leaned on their `css` and `test` files.
-  
-```
-|- components
-    |- Step
-        |- index.js
-        |- Step.js
-        |- Step.css.js
-        |- Step.test.js
-```
 
-### Containers components
-The `containers` folder has to organize only the containers components to map the redux states and dispatch to props. Here you should create the *actions, reducers, constants, sagas*. And the most important, the **component** that will receive the props. 
+---
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-```
-|- containers
-    |- FirstStepForm
-        |- FirstStepForm.js
-        |- actions.js
-        |- constants.js
-        |- container.js
-        |- index.js
-        |- reducer.js
-        |- sagas.js
-```
+## Available Scripts
 
-### Store
-The `store` folder was created to combine the "thousands and thousands" reducers of the applications and apply any middleware.
+In the project directory, you can run:
 
-### Saga
-The `saga` folder was created to combine all sagas of the application. 
+### `npm start`
 
-### Css
-And finally `css` is where the general styles are introduced to reset the application, and some root configurations for `sass` like *_variables* and *_mixins*.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Layout 
-I think that one of the things most dificult to define is the style(colors and the ux desing), so I've considered figure it out searching some designs to get inspired.
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-- The style was inspired by the [Asana Login](https://app.asana.com/-/login). I liked it :smile:, didn't you?
+### `npm test`
 
-## Technologies
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- **JavaScript** - *ES6+ (Babel)*; 
-- **UI Components** - *React*; 
-- **State management** - *Redux, React Redux, Redux Saga*;
-- **Preprocessor** - *Sass*;
-- **Modules** - *Webpack, CSS Modules*;
-- **Unit tests**: *Jest, Enzyme*;
-- **Clean code** - *Lint*;
+### `npm run build`
 
-## Getting started
-I encourage you to use the `yarn` to install the packages, you'll enjoy the yarn.lock to a faster installation, and the scripts will be fast too.
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Install
-```
-  yarn
-```
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-### Start app
-```
-  yarn start
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Running tests
-```
-  yarn test
-```
+### `npm run eject`
 
-### Watching the tests
-```
-  yarn test:watch
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Running coverage
-```
-  yarn test:cov
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Start Coverage Server
-```
-  yarn server:cov
-```
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Running ESLint
-```
-  yarn lint
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Troubleshoot Lint issues
-```
-  yarn lint:fix
-```
+## Learn More
 
-###  Storybook
-```
-  yarn storybook
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-###  Production build
-```
-  yarn build
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Production build watch
-```
-  yarn watch
-```
+### Code Splitting
 
-## Credits
-Created by [jmlavoier](https://github.com/jmlavoier)
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
