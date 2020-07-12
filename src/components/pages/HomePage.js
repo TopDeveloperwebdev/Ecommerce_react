@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+
 
 // Material UI Imports
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
-import TextField from "@material-ui/core/TextField";
+
 import StepLabel from "@material-ui/core/StepLabel";
 import StepConnector from "@material-ui/core/StepConnector";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import {withStyles } from "@material-ui/core/styles";
 import { Accordion } from "@material-ui/core";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -40,7 +40,7 @@ class HomePage extends Component {
     super(props);
     this.state = {
       stepper: 0,
-      validation: [1, 0, 0],
+      validation: [1, 0, 1],
       stepperStyles: ["active", "beactive", "beactive"],
       expanded: 0,
     };
@@ -91,6 +91,17 @@ class HomePage extends Component {
       });
     }
   }
+  handleValidation() {}
+  onSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(data);
+    // fetch("/api/form-submit-url", {
+    //   method: "POST",
+    //   body: data,
+    // });
+  }
+  
   render() {
     const steps = this.getSteps();
     let activeStep = this.state.stepper;
@@ -99,7 +110,7 @@ class HomePage extends Component {
     const result = this.getResult();
 
     return (
-      <div className="root">
+    
         <div className="mainSection">
           <div className="stepperContainer">
             <Stepper
@@ -115,7 +126,7 @@ class HomePage extends Component {
               ))}
             </Stepper>
           </div>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="uploadCard">
               <div className="uploadForm">
                 <Accordion
@@ -137,31 +148,39 @@ class HomePage extends Component {
                       </p>
                       <div>
                         <label>Nome Completo:</label>
-                        <input placeholder="Carla Sousa Caetano" />
+                        <input
+                          placeholder="Carla Sousa Caetano"
+                          onChange={() => this.handleValidation(0)}                       
+                          name="title"
+                        />
                       </div>
                       <div>
                         <label>E-mail:</label>
-                        <input placeholder="carlacaetano@gmail.com" />
+                        <input
+                          placeholder="carlacaetano@gmail.com"
+                          type="email"                       
+                          name="email"
+                        />
                       </div>
                       <div>
                         <label>CPF:</label>
-                        <input placeholder="001.234.567-89"></input>
+                        <input placeholder="001.234.567-89"   name="CPF"></input>
                       </div>
 
                       <div>
                         <label>Telefone de Contato:</label>
-                        <input placeholder="(63) 9 9900 9901" />
+                        <input placeholder="(63) 9 9900 9901"  name="phone" />
                       </div>
                       <div>
                         <label>Telefone de Contato:</label>
-                        <select>
+                        <select name="sex">
                           <option>feminino</option>
                           <option>masculina</option>
                         </select>
                       </div>
                       <div>
                         <label>Telefone de Contato:</label>
-                        <input placeholder="Carla Sousa Caetano" type="date" />
+                        <input placeholder="Carla Sousa Caetano" type="date"   name="date"/>
                       </div>
                       <div className="col-lg-12">
                         <button
@@ -175,7 +194,7 @@ class HomePage extends Component {
                     </div>
                   </AccordionDetails>
                 </Accordion>
-                <Accordion
+                {/* <Accordion
                   expanded={expanded === 1}
                   className="formSection"
                   onChange={(e) => this.changeExpand(e, 1)}
@@ -231,7 +250,7 @@ class HomePage extends Component {
                     </div>
                   </AccordionDetails>
                 </Accordion>
-                <Accordion
+                <Accordion }
                   expanded={expanded === 2}
                   className="formSection"
                   onChange={(e) => this.changeExpand(e, 2)}
@@ -279,6 +298,7 @@ class HomePage extends Component {
                     </div>
                   </AccordionDetails>
                 </Accordion>
+                */}
               </div>
               <div className="shoppingCart">
                 <div className="shoppingHeader">
@@ -321,7 +341,13 @@ class HomePage extends Component {
                   </div>
                   <div className="col-lg-12 text-center">
                     {this.state.validation[2] === 1 && (
-                      <button className="confirmBtn">confirmar</button>
+                      <button
+                        className="confirmBtn"
+                        type="button"
+                        onClick={this.onSubmit}
+                      >
+                        confirmar
+                      </button>
                     )}
                   </div>
                 </div>
@@ -329,7 +355,7 @@ class HomePage extends Component {
             </div>
           </form>
         </div>
-      </div>
+    
     );
   }
 }
