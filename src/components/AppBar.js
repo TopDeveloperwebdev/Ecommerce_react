@@ -19,6 +19,7 @@ const styles = (theme) => ({
     height: "75px",
     background: "#312E4B 0% 0% no-repeat padding-box",
     opacity: 1,
+    textAlign : "center"
   },
   grow: {
     flexGrow: 1,
@@ -49,7 +50,8 @@ class AppBar extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>       
+      <div className={classes.root}>   
+      <img src='./img/Ever-Branca.png' />    
       </div>
     );
   }

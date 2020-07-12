@@ -9,7 +9,7 @@ import {CssBaseline} from "@material-ui/core";
 
 // Component Imports
 import AppBar from "./components/AppBar";
-
+import FooterBar from "./components/FooterBar";
 // Page Imports
 import HomePage from "./components/pages/HomePage";
 import NoPageFound from "./components/pages/NoPageFound";
@@ -51,6 +51,7 @@ class App extends Component {
                 <Route path={"/settings"} exact /*strict*/ component={SettingsPage}/>
                 <Route exact /*strict*/ component={NoPageFound}/>
               </Switch>
+              <FooterBar/>
           </Router>
         // </MuiThemeProvider>
     );
